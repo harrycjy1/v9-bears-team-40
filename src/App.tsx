@@ -1,50 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 interface SApp {
-  test: string
+  test: string;
 }
 
 class App extends React.Component<{}, SApp> {
   constructor(props: any) {
-    super(props)
+    super(props);
 
     this.state = {
       test: ""
-    }
+    };
   }
 
   componentDidMount() {
-    fetch('/test')
-    .then((res) => {
-      console.log(res)
-      res.json().then((data) => {
-        console.log(data)
-        this.setState({test: data.test})
-      })
-    })
+    fetch("/test").then(res => {
+      console.log(res);
+      res.json().then(data => {
+        console.log(data);
+        this.setState({ test: data.test });
+      });
+    });
   }
 
-  render(){
+  render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            {this.state.test}
-          </p>
+          <p>{this.state.test}</p>
           <a
             className="App-link"
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Learn React (Hello im Sangil's friend nice to meet you!)
           </a>
         </header>
       </div>
-    )
+    );
   }
 }
 
